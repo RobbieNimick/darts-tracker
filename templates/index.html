@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darts Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Darts Tracker</h1>
+        <p class="subtitle">Enter player names and choose a game type to begin</p>
+
+        <form method="POST">
+            <div class="form-group">
+                <label>Player 1</label>
+                <input type="text" name="player1" placeholder="Enter name" required>
+            </div>
+            <div class="form-group">
+                <label>Player 2</label>
+                <input type="text" name="player2" placeholder="Enter name" required>
+            </div>
+            <div class="form-group">
+                <label>Game Type</label>
+                <select name="starting_score">
+                    <option value="501">501</option>
+                    <option value="301">301</option>
+                </select>
+            </div>
+            <button type="submit">Start Game</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darts Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Darts Tracker</h1>
+
+        <div class="scoreboard">
+            <div class="player {% if current_player == player1 %}active{% endif %}">
+                <h2>{{ player1 }}</h2>
+                <p class="score">{{ score1 }}</p>
+            </div>
+            <div class="player {% if current_player == player2 %}active{% endif %}">
+                <h2>{{ player2 }}</h2>
+                <p class="score">{{ score2 }}</p>
+            </div>
+        </div>
+
+        {% if message %}
+        <p class="message">{{ message }}</p>
+        {% endif %}
+
+        <p class="turn">{{ current_player }}'s turn</p>
+
+        <form method="POST">
+            <div class="form-group">
+                <label>Score this round</label>
+                <input type="number" name="dart_score" min="0" max="180" required autofocus>
+            </div>
+            <button type="submit">Submit Score</button>
+        </form>
+
+        <a href="{{ url_for('reset') }}" class="reset-link">Abandon Game</a>
+    </div>
+</body>
+</html>

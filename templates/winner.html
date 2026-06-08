@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darts Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Darts Tracker</h1>
+
+        <div class="winner-card">
+            <h2>🏆 Game Over!</h2>
+            <p class="winner-name">{{ winner }} wins!</p>
+        </div>
+
+        <a href="{{ url_for('reset') }}" class="button">Play Again</a>
+    </div>
+</body>
+</html>
